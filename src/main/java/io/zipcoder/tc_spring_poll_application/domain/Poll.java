@@ -7,11 +7,13 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+
 @Getter
 @Setter
+@Entity
 public class Poll {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "POLL_ID")
     private Long id;

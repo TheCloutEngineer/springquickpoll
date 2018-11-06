@@ -119,11 +119,11 @@
 * The method definition below supplies a `GET` request on the `/polls` endpoint which provides a collection of all of the polls available in the QuickPolls application. Copy and paste this into your `PollController` class.
 
 ```java
-@RequestMapping(value="/polls", method= RequestMethod.GET)
-public ResponseEntity<Iterable<Poll>> getAllPolls() {
-    Iterable<Poll> allPolls = pollRepository.findAll();
-    return new ResponseEntity<>(allPolls, HttpStatus.OK);
-}
+@GetMapping("/polls")
+    public ResponseEntity<Iterable<Poll>> getAllPolls() {
+        Iterable<Poll> allPolls = pollRepository.findAll();
+        return new ResponseEntity<>(allPolls, HttpStatus.OK);
+    }
 ```
 
 * The method above begins with reading all of the polls using the `PollRepository`.
@@ -149,11 +149,11 @@ public ResponseEntity<Iterable<Poll>> getAllPolls() {
 * We accomplish the capability to add new polls to the `PollController` by implementing the `POST` verb functionality in a `createPoll` method:
 
 ```java
-@RequestMapping(value="/polls", method=RequestMethod.POST)
-public ResponseEntity<?> createPoll(@RequestBody Poll poll) {
-        poll = pollRepository.save(poll);
-        return new ResponseEntity<>(null, HttpStatus.CREATED);
-}
+@PostMapping("/polls")
+    public ResponseEntity<?> createPoll(@RequestBody Poll poll){
+       poll = pollRepository.save(poll);
+       return new ResponseEntity<>(null, HttpStatus.CREATED);
+    }
 ```
 
 * Take note that the method

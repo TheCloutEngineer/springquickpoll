@@ -5,10 +5,12 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
+
 @Getter
 @Setter
+@Entity
 public class Vote {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "VOTE_ID")
