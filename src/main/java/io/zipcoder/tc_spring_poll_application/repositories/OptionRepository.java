@@ -1,8 +1,8 @@
 package io.zipcoder.tc_spring_poll_application.repositories;
 
 import io.zipcoder.tc_spring_poll_application.domain.Option;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface OptionRepository extends JpaRepository<Option, Long> {
+public interface OptionRepository extends CrudRepository<Option, Long> {
 
 }
